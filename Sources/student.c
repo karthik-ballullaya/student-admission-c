@@ -51,3 +51,8 @@ void print_application_details(ApplicantList *list, uint16_t applicationNumber) 
 uint32_t get_total_applicants(const ApplicantList *list) {
   return list->numberOfApplicants;
 }
+
+
+void update_application_program(ApplicantList *list , const uint16_t applicationNumber, const char *programName) {
+  strcpy(list->List[applicationNumber].program, programName);
+}

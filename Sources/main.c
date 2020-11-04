@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include <string.h>
 #include "student.h"
 #include "program.h"
 #include "admission_process.h"
@@ -25,6 +26,11 @@ void test_program_methods() {
   Program *BDAProgram = get_program_details(programList, "BDA");
   BDAProgram->filledSeats = 40;
   assert(get_filled_seat_count(programList, "BDA") == 40);
+  /* *
+   * Test update_max_seats method
+   * */
+  update_max_seats(programList, "BDA", 30);
+  assert(BDAProgram->maxSeats == 30);
 }
 
 void test_student_methods() {
@@ -62,6 +68,11 @@ void test_student_methods() {
    * Test get_total_applicants method
    * */
   assert(get_total_applicants(applicantList) == 2);
+  /* *
+   * Test update_application_program method
+   * */
+  update_application_program(applicantList, 0, "ML");
+  assert(strcmp(application_0->program, "ML") == 0);
 }
 
 void test_admission_process_methods() {

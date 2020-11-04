@@ -30,5 +30,6 @@ void                    update_application_status(Application *, APPLICATION_STA
 void                    print_application_details(ApplicantList *, uint16_t);
 uint32_t                get_total_applicants(const ApplicantList *);
 void                    update_application_registration_number(Application * , const uint32_t);
+void                    update_application_program(ApplicantList * , const uint16_t, const char *);
 
 #endif

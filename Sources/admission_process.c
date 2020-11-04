@@ -11,6 +11,7 @@ static int8_t check_condition(const Program *program, const Application *applica
 void allocate_seat(Program *program, Application *application) {
   if (check_condition(program, application)) {
     program->filledSeats++;
+    program->admissionTaken++;
     const uint32_t regNumber = generate_reg_number(program);
     update_application_registration_number(application, regNumber);
     update_application_status(application, ALLOTTED);
@@ -20,7 +21,7 @@ void allocate_seat(Program *program, Application *application) {
 }
 
 static uint32_t generate_reg_number(const Program *program) {
-  return (uint32_t) (program->programCode * REG_NUMBER_OFFSET + program->filledSeats);
+  return (uint32_t) (program->programCode * REG_NUMBER_OFFSET + program->admissionTaken);
 }
 
 void withdraw_application(const ProgramList *programList, Application *application) {

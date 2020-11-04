@@ -5,9 +5,10 @@
 
 struct _program_ {
   char         programName[PROGRAM_NAME_LEN];
-  uint32_t      programCode;
+  uint32_t     programCode;
   uint16_t     maxSeats;
   uint16_t     filledSeats;
+  uint16_t     admissionTaken;
 };
 
 typedef struct _program_ Program;
@@ -24,6 +25,7 @@ int8_t                add_new_program(ProgramList *, char *, uint32_t, uint16_t)
 static Program        create_program(char *, uint32_t, uint16_t);
 Program *             get_program_details(ProgramList *, const char *);
 uint16_t              get_filled_seat_count(const ProgramList *, const char *);
+void                  update_max_seats(const ProgramList *, const char *, const uint16_t);
 
 
 #endif

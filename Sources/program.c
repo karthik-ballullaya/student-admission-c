@@ -42,3 +42,8 @@ Program * get_program_details(ProgramList *list, const char *programName) {
     }
   }
 }
+
+void update_max_seats(const ProgramList *list, const char *programName, const uint16_t maxSeats) {
+  Program *program = get_program_details(list, programName);
+  program->maxSeats = maxSeats;
+}
