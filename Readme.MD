@@ -1,6 +1,6 @@
-#Student admission process in C using struct
+# Student admission process in C using struct
 
-###Functionalities implemented:
+### Functionalities implemented:
 * Store student info like: Name, program applied, registration number,
 entrance test rank, UG grade, admission status (alloted, rejected, waiting).
 * Provision to store program info like name, seats, filled seats.
